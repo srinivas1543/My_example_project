@@ -39,3 +39,12 @@ def update(request):
             if index>=0 and index<len(activities):
                 activities[index] = new_activity
     return redirect('/')
+def update(request):
+    if request.method == 'POST':
+        index = int(request.POST.get('index'))
+        new_activity = request.POST.get('new_activity')
+        if index is not None and new_activity:
+            if index>=0 and index<len(activities):
+                activities[index] = new_activity
+    return redirect('/')
+
